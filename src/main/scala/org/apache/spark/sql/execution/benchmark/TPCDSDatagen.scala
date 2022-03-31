@@ -308,7 +308,7 @@ class Tables(sqlContext: SQLContext, scaleFactor: Int) extends Serializable {
         |`cs_net_profit` DECIMAL(7,2)
       """.stripMargin),
     Table("catalog_returns",
-      "cr_returned_date_sk" :: Nil,
+      partitionColumns = "cr_returned_date_sk" :: Nil,
       """
         |`cr_returned_date_sk` INT,
         |`cr_returned_time_sk` INT,
